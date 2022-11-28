@@ -1,0 +1,74 @@
+<!-- 
+<div>
+    <p-table [value]="Employee" [tableStyle]="{'min-width': '50rem'}">
+        <ng-template pTemplate="header">
+        <tr>
+            <th>Name</th>
+            <th>Total Time in Month</th>
+            <th>Action</th>
+           
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-Employee>
+        <tr>
+            <td>{{Employee.EmployeeName}}</td>
+            <td>{{Employee.diffInHours}}</td>
+            <td>{{Employee.EndTimeUtc}}</td>
+        </tr>
+        </ng-template>
+    </p-table>
+</div>
+<div>
+    
+</div> -->
+<!-- <div class="container custom-container-2">
+    <div class="no-data text-center" *ngIf="Employee.length == 0">
+      <button class="btn btn-outline-primary" routerLink="/employees">
+       
+      </button>
+    </div>
+    <div *ngIf="Employee.length !== 0">
+      <h3 class="mb-3 text-center">Employees List</h3>
+      <div class="col-md-12">
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th scope="col">Name</th>
+              <th scope="col">hours for the month</th>
+              <th scope="col">Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let employee of Employee">
+
+              <td>{{ employee.EmployeeName }}</td>
+              <td>{{ employee.diffInHours }}</td>
+              <td>{{ employee.EndTimeUtc }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div> -->
+
+
+
+<div class="card">
+  <h5>EMPLOYEES</h5>
+  <p-table [value]="employeeResult"  [tableStyle]="{'min-width': '50rem'}">
+    <ng-template pTemplate="header">
+      <tr>
+        <th>Name</th>
+        <th>Total Time in Month</th>
+        <th>Action</th>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-employee>
+      <tr [ngClass]="employee.workinghours  < 100? 'row-red-color' : ''">
+        <td>{{employee.employeeName}}</td>
+        <td>{{employee.workinghours}}</td>
+        <td><button>Edit</button></td>
+      </tr>
+    </ng-template>
+  </p-table>
+</div>
